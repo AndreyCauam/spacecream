@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --back-color: hsl(233, 100%, 97%);
+  --back-card-color: hsl(312, 91%, 96%);
+  --primary-color: hsl(218, 17%, 62%);
+  --secondary-color: hsl(275, 18%, 79%);
+  --text-p-color: hsl(274, 84%, 12%);
+  --text-h-color: hsl(232, 17%, 35%);
+
+  --upper-font: 'Staatliches', cursive;
+  --lower-font: 'Palanquin', sans-serif;
+}
+
+body {
+  background-color: var(--back-color);
+
+  font-family: var(--upper-font);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+
+  height: 28rem;
+
+  align-items: center;
+
+  background-color: var(--primary-color);
+}
+
+.logo {
+  width: 13.7rem;
+  height: 13.7rem;
+
+  margin-top: 3.2rem;
+}
+
+header h1 {
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 3.4rem;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.05em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.8rem;
+
+  width: 100%;
+  height: 4.9rem;
+
+  margin-top: 4rem;
+
+  background-color: var(--secondary-color);
+
+  color: #ffffff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 38.4rem;
+
+  margin: 0 auto;
+}
+
+main p {
+  font-family: var(--lower-font);
+  font-size: 2rem;
+  line-height: 1.5rem;
+
+  width: 30.5rem;
+  margin-top: 1.4rem;
+
+  text-align: center;
+
+  color: var(--text-p-color);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  margin-top: 6.3rem;
+  margin-bottom: 6rem;
+}
+
+.card {
+  position: relative;
+
+  animation: movecards 700ms ease-in;
+  transition: all 200ms ease-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card h2 {
+  color: var(--text-h-color);
+  background-color: var(--back-card-color);
+
+  position: absolute;
+
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  border-radius: 2rem;
+
+  padding: 0 2.4rem;
+
+  top: 1.6rem;
+  right: 1.6rem;
+
+  animation: movetextcards 700ms ease-in;
+}
+
+@keyframes movecards {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes movetextcards {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
